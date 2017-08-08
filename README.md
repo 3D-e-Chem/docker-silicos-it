@@ -1,6 +1,6 @@
 # docker-silicos-it
 
-Docker image for [silicos-it software](http://silicos-it.be.s3-website-eu-west-1.amazonaws.com/index.html)/
+Docker image for [silicos-it software](http://silicos-it.be.s3-website-eu-west-1.amazonaws.com/index.html).
 
 ## Build
 
