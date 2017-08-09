@@ -4,12 +4,15 @@ Docker image for [silicos-it software](http://silicos-it.be.s3-website-eu-west-1
 
 ## Build
 
+```bash
 docker build -t 3dechem/silicosit .
+```
 
 ## Run
 
 Apply filter it on smiles strings
-```
+
+```bash
 echo 'C[C@H](NCc1ccc(OCc2cccc(F)c2)cc1)C(=O)N' > input.smiles
 echo 'NC(=O)c1cccc2cn(nc12)c3ccc(cc3)[C@@H]4CCCNC4' >> input.smiles
 echo 'ONLY_ELEMENTS C H O N Br Cl' > filter.txt
