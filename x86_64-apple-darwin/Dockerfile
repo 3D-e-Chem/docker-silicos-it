@@ -49,3 +49,9 @@ RUN wget -O openbabel-2.4.1.tar.gz 'https://downloads.sourceforge.net/project/op
     crossbuild make -j 2 && crossbuild make install && \ 
     cd ../.. && \
     rm -r align-it-1.0.4 align-it-1.0.4.tar.gz
+
+RUN cd /usr/local/bin && \ 
+    for i in `ls *-it`; do crossbuild install_name_tool -change "libopenbabel.so.5" "@loader_path/../lib/libopenbabel.so.5.0.0" $i; done && \
+    cd /usr/local/lib/openbabel/2.4.1 && \
+    for i in `ls *.so`; do crossbuild install_name_tool -change "libopenbabel.so.5" "@loader_path/../libopenbabel.so.5.0.0" $i; done && \
+    for i in `ls *.so`; do crossbuild install_name_tool -change "libinchi.so.0" "@loader_path/../libinchi.so.0.4.1" $i; done
